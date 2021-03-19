@@ -25,12 +25,13 @@ SECRET_KEY = '8&3q@2um+u3hpdpc#3hi2*1_dhzalz!p($o3m%um5r-e2yzzde'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','192.168.6.51']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'app1.apps.App1Config',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -73,12 +74,26 @@ WSGI_APPLICATION = 'medicus.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE' : 'firebird',
+        'NAME' : 'importy', # Path to database or db alias
+        'USER' : 'SYSDBA',           # Your db user
+        'PASSWORD' : 'masterkey',    # db user password
+        'HOST' : '192.168.6.51',        # Your host machine
+        'PORT' : '3050',             # If is empty, use default 3050
+        'OPTIONS' : {'charset':'UTF8'}
     }
 }
+
+
 
 
 # Password validation
@@ -103,9 +118,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pl-pl'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Warsaw'
 
 USE_I18N = True
 
