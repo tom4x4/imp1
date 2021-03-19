@@ -74,24 +74,24 @@ WSGI_APPLICATION = 'medicus.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE' : 'firebird',
-        'NAME' : 'importy', # Path to database or db alias
-        'USER' : 'SYSDBA',           # Your db user
-        'PASSWORD' : 'masterkey',    # db user password
-        'HOST' : '192.168.6.51',        # Your host machine
-        'PORT' : '3050',             # If is empty, use default 3050
-        'OPTIONS' : {'charset':'UTF8'}
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE' : 'firebird',
+#         'NAME' : 'importy', # Path to database or db alias
+#         'USER' : 'SYSDBA',           # Your db user
+#         'PASSWORD' : 'masterkey',    # db user password
+#         'HOST' : '192.168.6.51',        # Your host machine
+#         'PORT' : '3050',             # If is empty, use default 3050
+#         'OPTIONS' : {'charset':'UTF8','dialect':3}
+#     }
+# }
 
 
 

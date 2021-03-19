@@ -1,5 +1,5 @@
 do instalacji
 
-django
-fdb
-django-firebird
+django  (3.1.x)
+
+
