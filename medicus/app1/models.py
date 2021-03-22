@@ -8,10 +8,14 @@ class Bloz(models.Model):
     prodc = models.CharField('Producent', max_length=60,null=True,blank=True)
     kodkr = models.CharField('EAN', max_length=14,null=True,blank=True)
     class Meta:
+        managed = False
+        db_table = 'BLOZ'
         indexes = [
+            models.Index(fields=['kod07',]),
             models.Index(fields=['nazwa','-nazwa']),
             models.Index(fields=['kodkr',])
-                    ]
+            models.Index(fields=['prodc', ])
+                     ]
 
 
 
