@@ -13,7 +13,7 @@ class Bloz(models.Model):
         indexes = [
             models.Index(fields=['kod07',]),
             models.Index(fields=['nazwa','-nazwa']),
-            models.Index(fields=['kodkr',])
+            models.Index(fields=['kodkr',]),
             models.Index(fields=['prodc', ])
                      ]
 
