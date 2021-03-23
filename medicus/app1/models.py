@@ -17,6 +17,19 @@ class Bloz(models.Model):
             models.Index(fields=['prodc', ])
                      ]
 
+class Apteki(models.Model):
+    id = models.AutoField(primary_key=True)
+    apteka = models.CharField('Apteka',max_length=14)
+    ip = models.GenericIPAddressField('Ip', protocol='IPv4')
+
+    def __str__(self):
+        return ("{}  {}" .format(self.apteka,self.ip ))
+
+    class Meta:
+        verbose_name = 'Apteki'
+        # verbose_name_plural ='xxxx'
+
+
 
 
 
