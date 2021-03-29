@@ -19,5 +19,6 @@ from app1 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tabelka/', views.tabelka_view)
+    path('tabelka/', views.tabelka_view),
+    path("tabelka/([0-9])", views.item_edit, name="item_edit")
 ]

@@ -16,4 +16,11 @@ def tabelka_view(request):
         'table' :table
     })
 
+#def item_edit(self,record):
+    #return mark_safe('<a href='+reverse("edit", args=[record.pk])+'>Edit</a>')
+
+def item_edit(record):
+    return ('ala'+ record)
+
+
 
