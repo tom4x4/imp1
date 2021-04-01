@@ -8,7 +8,7 @@ class Bloz(models.Model):
     prodc = models.CharField('Producent', max_length=60,null=True,blank=True,editable=False)
     kodkr = models.CharField('EAN', max_length=14,null=True,blank=True,editable=False)
     cenud = models.DecimalField('UrzDetal',max_digits=5,decimal_places=2,editable=False)
-    cenuz = models.DecimalField('UrzZakup',max_digits=5,decimal_places=2,editable=False)
+    cenuh = models.DecimalField('UrzZakup',max_digits=5,decimal_places=2,editable=False)
     datam = models.DateTimeField('Aktualizacja',editable=False)
     class Meta:
         managed = False
