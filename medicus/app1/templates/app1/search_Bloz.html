@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+      <title>Title</title>
 </head>
 <body>
-search_Bloz
-</br>
-{{lek.id}}
-{{lek.nazwa}}
+
+<form method="post", class="post-form", >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit", value="123">aaa</button>
+</form>
 
 </body>
 </html>

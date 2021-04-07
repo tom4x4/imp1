@@ -4,6 +4,7 @@ from django_tables2 import SingleTableView
 from .models import Apteki
 from .models import Bloz
 from .tables import AptekiTable
+#from .forms import Wyszukaj
 
 # class Tabelka(SingleTableView):
 #     model = Apteki
@@ -29,8 +30,18 @@ def tabelka_view(request):
 def search_Bloz(request):
     # if request.method== 'POST':
     #     pass
-    lek = Bloz.objects.get(pk='3002551')
+    #lek = Bloz.objects.get(pk='3002551')
     return render(request, 'app1/search_Bloz.html', {'lek':lek})
+
+def wyszukaj(request):
+    if request.method == 'POST':
+        form = Wyszukaj(request.POST)
+        kod07=request.POST.get('kod07')
+    else:
+        form= Wyszukaj()
+        kod07=""
+
+    return render(request,'app1/wyszukaj.html')
 
 
 #def item_edit(self,record):
@@ -40,4 +51,4 @@ def item_edit(record):
     return ('ala'+ record)
 
 
-
+#pk='3002551'
