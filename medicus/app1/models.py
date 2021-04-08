@@ -9,7 +9,7 @@ class Bloz(models.Model):
     kodkr = models.CharField('EAN', max_length=14,null=True,blank=True,editable=False)
     cenud = models.DecimalField('UrzDetal',max_digits=5,decimal_places=2,editable=False)
     cenuh = models.DecimalField('UrzZakup',max_digits=5,decimal_places=2,editable=False)
-    datam = models.DateTimeField('Aktualizacja',editable=False)
+    datam = models.DateTimeField('Modyfikacja',editable=False)
     class Meta:
         managed = False
         db_table = 'BLOZ'
@@ -24,6 +24,7 @@ class Apteki(models.Model):
     id = models.AutoField(primary_key=True)
     apteka = models.CharField('Apteka',max_length=14)
     ip = models.GenericIPAddressField('Ip', protocol='IPv4')
+    aktywna = models.BooleanField('Aktywna', max_length=1, default=1)
     def __str__(self):
         # zwraca kolumny w admin
         return ("{}  {}" .format(self.apteka,self.ip ))
